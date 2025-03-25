@@ -54,39 +54,37 @@ The API will be available at http://127.0.0.1:8000/
 
 # 🔗 API Endpoints
 
-## User Authentication
-
-## Register a User
+## User Authentication - Register a User
 
 POST /users/register/
 
 ### Request Body:
-
+```bash
 {
     "username": "testuser",
     "email": "test@example.com",
     "password": "securepassword"
 }
-
+```
 ### Response:
-
+```bash
 {
     "id": 1,
     "username": "testuser",
     "email": "test@example.com"
 }
-
+```
 ## Login & Get Token
 
 POST /users/login/
 
 ### Response:
-
+```bash
 {
     "access": "your_jwt_token_here",
     "refresh": "your_refresh_token_here"
 }
-
+```
 # Task Management
 
 ## Create a Task
@@ -95,15 +93,15 @@ POST /tasks/
 Authorization: Bearer your_jwt_token
 
 ### Request Body:
-
+```bash
 {
     "name": "Project Meeting",
     "description": "Discuss project timeline",
     "status": "pending"
 }
-
+```
 ### Response:
-
+```bash
 {
     "id": 1,
     "name": "Project Meeting",
@@ -111,22 +109,22 @@ Authorization: Bearer your_jwt_token
     "status": "pending",
     "assigned_users": []
 }
-
+```
 ## Assign Users to a Task
 
 PATCH /tasks/1/assign/
 
 ### Request Body:
-
+```bash
 {
     "assigned_users": [1, 2]
 }
-
+```
 ### Response:
-
+```bash
 {
     "id": 1,
     "assigned_users": [1, 2]
 }
-
+```
 ### Retrieve Tasks for a User
