@@ -50,3 +50,83 @@ python manage.py createsuperuser  # Follow the prompts to set credentials
 python manage.py runserver
 ```
 The API will be available at http://127.0.0.1:8000/
+
+
+# 🔗 API Endpoints
+
+## User Authentication
+
+## Register a User
+
+POST /users/register/
+
+### Request Body:
+
+{
+    "username": "testuser",
+    "email": "test@example.com",
+    "password": "securepassword"
+}
+
+### Response:
+
+{
+    "id": 1,
+    "username": "testuser",
+    "email": "test@example.com"
+}
+
+## Login & Get Token
+
+POST /users/login/
+
+### Response:
+
+{
+    "access": "your_jwt_token_here",
+    "refresh": "your_refresh_token_here"
+}
+
+# Task Management
+
+## Create a Task
+
+POST /tasks/
+Authorization: Bearer your_jwt_token
+
+### Request Body:
+
+{
+    "name": "Project Meeting",
+    "description": "Discuss project timeline",
+    "status": "pending"
+}
+
+### Response:
+
+{
+    "id": 1,
+    "name": "Project Meeting",
+    "description": "Discuss project timeline",
+    "status": "pending",
+    "assigned_users": []
+}
+
+## Assign Users to a Task
+
+PATCH /tasks/1/assign/
+
+### Request Body:
+
+{
+    "assigned_users": [1, 2]
+}
+
+### Response:
+
+{
+    "id": 1,
+    "assigned_users": [1, 2]
+}
+
+### Retrieve Tasks for a User
