@@ -90,7 +90,6 @@ POST /users/login/
 ## Create a Task
 
 POST /tasks/
-Authorization: Bearer your_jwt_token
 
 ### Request Body:
 ```bash
