@@ -39,13 +39,13 @@ source venv/bin/activate  # On Windows: venv\Scripts\activate
 ```bash
 pip install -r requirements.txt
 ```
-4. Apply Migrations & Create Superuser
+### 4. Apply Migrations & Create Superuser
 ```bash
 python manage.py makemigrations
 python manage.py migrate
 python manage.py createsuperuser  # Follow the prompts to set credentials
 ```
-5. Run the Development Server
+### 5. Run the Development Server
 ```bash
 python manage.py runserver
 ```
