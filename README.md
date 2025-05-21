@@ -22,7 +22,7 @@ The Task Management API is a RESTful web service built with Django and Django Re
 - Role-Based Access Control using DRF Permissions
 
 
-## After fixing Python PATH
+# After fixing Python PATH
 
 # Create virtual env
 python -m venv venv
