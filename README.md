@@ -46,6 +46,14 @@ pip install -r requirements.txt
 python manage.py makemigrations
 python manage.py migrate
 python manage.py createsuperuser  # Follow the prompts to set credentials
+
+makemigrations → Generate Python migration scripts (like a blueprint).
+migrate → Actually run SQL on the database using those scripts.
+
+Use sqlmigrate → See the raw SQL before applying.
+Use showmigrations → See pending/applied migrations.
+Check django_migrations table → History of applied migrations.
+
 ```
 ### 5. Run the Development Server
 ```bash
